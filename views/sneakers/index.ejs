@@ -9,11 +9,11 @@
   </head>
   <body>
     <h1>All Sneakers</h1>
-    <!-- views/fruits/index.ejs -->
+    <!-- views/shoes/index.ejs -->
     <a href="/shoes/new">Add New Shoes</a>
     <ul>
-        <% shoes.forEach(fruit => { %>
-          <li><%= shoes.name %></li>
+        <% shoes.forEach(shoe => { %>
+          <li><a href="/shoes/<%= shoe._id %>"><%= shoe.name %></a></li>
         <% }); %>
     </ul>
   </body>

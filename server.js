@@ -15,6 +15,8 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+//npm i moment for date formatting
+const moment = require('moment');
 const Shoe = require("./models/shoes.js");
 
 // GET the /
@@ -42,7 +44,16 @@ app.post("/shoes", async (req, res) => {
 });
 
 // GET the /shoes/:id (show/display a shoe by id)
-
+app.get("/shoes/:shoeId", async (req, res) => {
+    //get the shoe by id from database
+    const foundShoe = await Shoe.findById(req.params.shoeId);
+    //format the date
+    foundShoe.formattedDate = moment(foundShoe.releaseDate).format('MM/DD/YYYY');
+    //render the page
+    res.render("sneakers/show.ejs", {
+        shoe: foundShoe,
+    });
+});
 
 // GET the /shoes/:id/edit (show a form to edit a shoe)
 
