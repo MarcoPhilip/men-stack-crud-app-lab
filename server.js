@@ -66,7 +66,7 @@ app.put("/shoes/:shoeId", async (req, res) => {
 });
 
 // DELETE the /plants/:id (delete a specific shoe by id)
-app.delete("shoes/:shoeId", async (req,res) => {
+app.delete("/shoes/:shoeId", async (req,res) => {
     //find the shoe by id and delete
     await Shoe.findByIdAndDelete(req.params.shoeId);
     //redirect back to shoe index page
