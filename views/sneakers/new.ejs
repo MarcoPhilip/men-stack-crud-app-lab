@@ -8,23 +8,24 @@
 <body>
     <h1>Submit a Sneaker</h1>
     <form action="/shoes" method="POST">
-        <label for="name">Sneaker Name</label>
-        <input type="text" name="name" id="name">
-        
-        <label for="brand">Brand</label>
-        <input type="text" name="brand" id="brand">
+        <div>
+            <label for="name">Sneaker Name</label>
+            <input type="text" name="name" id="name">
+            
+            <label for="brand">Brand</label>
+            <input type="text" name="brand" id="brand">
 
-        <label for="type">Type</label>
-        <input type="text" name="type" id="type">
+            <label for="type">Type</label>
+            <input type="text" name="type" id="type">
+        </div>
+        <div>
+            <label for="releaseDate">Date of Release</label>
+            <input type="text" name="releaseDate" id="releaseDate" placeholder="MM/DD/YYY">
 
-        
-        <label for="releaseDate">Date of Release</label>
-        <input type="text" name="releaseDate" id="releaseDate" placeholder="MM/DD/YYY">
-
-        <label for="retailPrice">MSRP</label>
-        <input type="text" name="retailPrice" id="retailPrice">
-
-        <button type="submit">Submit</button>
+            <label for="retailPrice">MSRP</label>
+            <input type="text" name="retailPrice" id="retailPrice">
+        </div>
+            <button type="submit">Submit Sneaker</button>
     </form>
     <a href="/shoes">Browse Sneakers</a>
 </body>

@@ -50,7 +50,7 @@ app.get("/shoes/:shoeId", async (req, res) => {
     //get the shoe by id from database
     const foundShoe = await Shoe.findById(req.params.shoeId);
     //format the date
-    foundShoe.formattedDate = moment(foundShoe.releaseDate).format('MM/DD/YYYY');
+    // foundShoe.formattedDate = moment(foundShoe.releaseDate).format('MM/DD/YYYY');
     //render the page
     res.render("sneakers/show.ejs", {
         shoe: foundShoe,
